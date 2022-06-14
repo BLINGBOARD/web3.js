@@ -250,7 +250,7 @@ describe('sendTransaction', () => {
 	);
 
 	it.each(testData)(
-		`should resolve Web3PromiEvent with expectedReceiptInfo\n ${testMessage}`,
+		`should resolve promiEvent with expectedReceiptInfo\n ${testMessage}`,
 		async (_, inputTransaction, sendTransactionOptions) => {
 			const formattedReceiptInfo = format(
 				receiptInfoSchema,
@@ -306,7 +306,7 @@ describe('sendTransaction', () => {
 			);
 			expect(watchTransactionForConfirmationsSpy).toHaveBeenCalledWith(
 				web3Context,
-				Web3PromiEvent,
+				promiEvent,
 				formattedReceiptInfo,
 				expectedTransactionHash,
 				DEFAULT_RETURN_FORMAT,
